@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+torch = {path = "./dist/torch-0.2.0.post3-cp35-cp35m-macosx_10_7_x86_64.whl"}
+torchvision = "==0.1.9"
+slackbot = "==0.5.1"
+filer3 = "==0.1.2"
+mecab-python3 = "==0.7"
+
+[requires]
+python_version = "3.5"

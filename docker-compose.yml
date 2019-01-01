@@ -1,0 +1,10 @@
+version: "2"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: asia.gcr.io/${GCP_PROJECT}/slackbot-boredjd
+    container_name: slackbot-boredjd
+    env_file:
+      - ./conf/slack_api_token.env
