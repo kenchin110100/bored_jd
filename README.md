@@ -15,12 +15,15 @@ $ docker-compose up
 ```
 .
 ├── Dockerfile
-├── README
+├── README.md
+├── bin
 ├── conf
+│   ├── config.yml
 │   └── slack_api_token.env
 ├── dist
 │   ├── torch-0.2.0.post3-cp35-cp35m-macosx_10_7_x86_64.whl
-│   └── torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl
+│   ├── torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl
+│   └── torch-0.4.1-cp35-cp35m-linux_x86_64.whl
 ├── docker-compose.yml
 ├── plugins
 │   ├── __init__.py
@@ -40,6 +43,7 @@ $ docker-compose up
 │       ├── Pipfile
 │       └── Pipfile.lock
 ├── run.py
+├── slackbot-boredjd-deployment.yml
 └── slackbot_settings.py
 ```
 
