@@ -30,4 +30,4 @@ RUN bin/install-mecab-ipadic-neologd -n -y -p /var/lib/mecab/dic/mecab-ipadic-ne
 WORKDIR /home
 RUN pipenv install --system
 
-CMD ["python", "run.py"]
+# CMD ["python", "run.py"]

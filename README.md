@@ -58,9 +58,28 @@ $ gcloud container clusters create --num-nodes=2 slack-bot-cluster \
 --zone asia-northeast1-a \
 --enable-autoscaling --min-nodes=2 --max-nodes=5
 
+# Google Container Registoryの認証を行っておく
+# https://cloud.google.com/container-registry/docs/advanced-authentication
+```
+
+### ローカルでビルド->GCR->デプロイ
+```
 # imageのbuild
 $ docker-compose build
+
+# imageをGCRにpush
+$ gcloud docker -- push asia.gcr.io/$GCP_PROJECT/slackbot-boredjd:latest
+
+# secretの設定
+$ kubectl create -f conf/config.yml
+
+# デプロイ
+$ kubectl create -f slackbot-boredjd-deployment.yml
+# podのデプロイがちゃんとできているか確認
+$ kubectl get pod
 ```
 
 ## 参考資料
 * https://qiita.com/yusukixs/items/11601607c629295d31a7
+* https://qiita.com/tkusumi/items/01cd18c59b742eebdc6a
+* https://qiita.com/tkusumi/items/cf7b096972bfa2810800
