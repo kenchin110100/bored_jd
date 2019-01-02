@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: slackbot-boredjd-deploy
+spec:
+  replicas: 1 # コンテナのレプリカ数の設定
+  template:
+    metadata:
+      labels:
+        app: slackbot-boredjd-deploy
+    spec:
+      containers:
+      - name: slackbot-boredjd-deploy
+        image: asia.gcr.io/kenchin-develop/slackbot-boredjd # コンテナイメージの指定（必須）
+        envFrom:
+        - configMapRef:
+            name: slackbot-boredjd-config
+        ports:
+        - containerPort: 3000 # コンテナポートの指定
+        command: ["python", "run.py"]
